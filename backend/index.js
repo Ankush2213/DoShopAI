@@ -17,7 +17,7 @@ let app = express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
- origin:["https://doshopai-frontend-one.onrender.com" , "https://doshopai-admin.onrender.com"],
+ origin:["https://doshopai-frontend-one.onrender.com" , "https://doshopai-admin-mod.onrender.com"],
  credentials:true
 }))
 
