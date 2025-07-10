@@ -13,6 +13,7 @@ import orderRoutes from './routes/orderRoutes.js'
 let port = process.env.PORT || 6000
 
 let app = express()
+app.set("trust proxy", 1) // ✅ Needed on Render
 
 app.use(express.json())
 app.use(cookieParser())
@@ -26,6 +27,11 @@ app.use("/api/user",userRoutes)
 app.use("/api/product",productRoutes)
 app.use("/api/cart",cartRoutes)
 app.use("/api/order",orderRoutes)
+
+// ✅ Add root route
+app.get("/", (req, res) => {
+  res.send("✅ DoShopAI backend is running!");
+})
 
 
 
